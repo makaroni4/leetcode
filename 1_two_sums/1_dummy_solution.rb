@@ -1,5 +1,3 @@
-require "test/unit"
-
 def two_sum(nums, target)
   nums.each_index.select do |i|
     nums[(i+1)..-1].each_index.select do |j|
