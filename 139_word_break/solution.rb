@@ -4,9 +4,16 @@
 def word_break(s, word_dict)
   set = Hash[word_dict.zip(Array.new(word_dict.size, true))]
 
-  queue = s.size.times.map do |i|
-    [s[0..i], s[i + 1..-1]]
+  queue = []
+
+  s.size.times do |i|
+    prefix = s[0..i]
+    suffix = s[i + 1..-1]
+
+    queue.push([prefix, suffix]) if set.has_key?(prefix)
   end
+
+  known_prefixes = {}
 
   while queue.any? do
     prefix, suffix = queue.pop
