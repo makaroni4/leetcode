@@ -1,12 +1,4 @@
-# Definition for singly-linked list.
-class ListNode
-  attr_accessor :val, :next
-
-  def initialize(val)
-    @val = val
-    @next = nil
-  end
-end
+require_relative "../shared/linked_list_helpers"
 
 # @param {ListNode} head
 # @return {ListNode}
